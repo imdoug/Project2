@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NEW PAGE</title>
+    </head>
+    <body>
+        <h1>NEW PAGE</h1>
+        <form action="/restaurant" method="POST">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" placeholder="dish name"/></td>
+                </tr>
+                <tr>
+                    <td>Ingredients:</td>
+                    <td><input type="textarea" name="ingredients" placeholder="dish ingredients"/></td>
+                </tr>
+                <tr>
+                    <td> Image:</td>
+                    <td><input type="text" name="img" placeholder="image url"/></td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td><input type="number" name="price" placeholder="price"/></td>
+                </tr>
+                <tr>
+                    <td>Tags:</td>
+                    <td><input type="text" name="tags" placeholder="tags"/></td>
+                </tr>
+            </table>
+            <input type="submit" value="CREATE ITEM"/>
+        </form>
+    </body>
+</html>
