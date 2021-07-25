@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EDIT PAGE</title>
+    </head>
+    <body>
+        <h1>Editing <%=dish.name%></h1>
+        <form action="/restaurant/<%=id%>/edit" method="POST">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" value="<%=dish.name%>"/></td>
+                </tr>
+                <tr>
+                    <td>Ingredients:</td>
+                    <td><input type="textarea" name="ingredients" value="<%=dish.ingredients%>"/></td>
+                </tr>
+                <tr>
+                    <td> Image:</td>
+                    <td><input type="text" name="img" value="<%=dish.img%>"/></td>
+                </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td><input type="number" name="price" value="<%=dish.price%>"/></td>
+                </tr>
+                <tr>
+                    <td>Tags:</td>
+                    <td><input type="text" name="tags" value="<%=dish.tags%>"/></td>
+                </tr>
+            </table>
+            <input type="submit" value="EDIT ITEM"/>
+            <a  href="/restaurant"class="back">BACK</a>
+        </form>
+    </body>
+</html>

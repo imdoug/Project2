@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SHOW PAGE</title>
+    <style>
+        img{
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/restaurant/<%=id%>?_method=DELETE" method="POST">
+            <h3><%=dish.name%></h3>
+            <div>
+                <div>
+                    <img src="<%=dish.img%>">
+                </div>
+                <p class="ingridients"><%=dish.ingridients%></p>
+                <p class="price">$<%=dish.price%>,00</p>
+                <p tags="tags">#<%=dish.tags%></p>
+            </div>
+            <a href="/restaurant">BACK</a>
+            <a href="/restaurant/<%=dish.id%>/edit">EDIT</a>
+            <input class="delete" type="submit" value="DELETE"/>
+        </form>
+    </div>   
+</body>
+</html>
