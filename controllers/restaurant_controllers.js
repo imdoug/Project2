@@ -17,6 +17,9 @@ restaurant.post('/', (req,res)=>{
         }
     })
 })
+restaurant.get('/location', (req,res)=>{
+    res.render('info.ejs')
+})
 //INDEX ROUTE
 restaurant.get('/', (req,res)=>{
     Restaurant.find({}, (err, allDishes)=>{
