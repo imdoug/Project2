@@ -25,7 +25,8 @@ restaurant.get('/', (req,res)=>{
         }else{
             res.render('index.ejs', 
             {
-                dishes: allDishes
+                dishes: allDishes,
+                currentUser: req.session.currentUser
             }
             )
         }

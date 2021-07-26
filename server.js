@@ -4,9 +4,13 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const session = require('express-session')
+const usersControllers = require('./controllers/user_controllers.js')
+const sessionControllers = require('./controllers/sessions_controllers.js')
 const restaurantControllers = require('./controllers/restaurant_controllers.js')
 
 //CONFIGURATION
+
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
@@ -25,7 +29,13 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+mongoose.connect(MONGODB_URI , 
+  {
+   useNewUrlParser: true, 
+   useUnifiedTopology: true, 
+   useFindAndModify: false,
+   useCreateIndex: true
+  }
 );
 
 // Error / success
@@ -36,7 +46,13 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //___________________
 //Middleware
 //___________________
-
+app.use(
+  session({
+    secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
+    resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
+    saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
+  })
+)
 //use public folder for static assets
 app.use(express.static('public'));
 
@@ -45,6 +61,8 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use('/users', usersControllers)
+app.use('/sessions', sessionControllers)
 app.use('/restaurant', restaurantControllers)
 
 
