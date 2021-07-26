@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RESERVE</title>
+        <style>
+            #reserve{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            select{
+                width: 250px;
+                height: 30px;
+                font-size: 1em;
+                padding-inline-start: 5px;
+                border: 1px solid black;
+            }
+            input{
+                font-size: 1em;
+                width: 250px;
+                height: 25px;
+                padding-inline-start: 5px;
+                margin-bottom: 5px;
+                border: 1px solid black;
+                padding: 3.5px 5px 0px 5px;
+            }
+            input.reserve{
+                width: 100px;
+                height: 30px;
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <footer>
+            <div id="reserve">
+                <select name="day" id="day" placeholder="number of people">
+                    <option value="1 person">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <option value="4">4 people</option>
+                    <option value="5">5 people</option>
+                    <option value="6">6 people</option>
+                    <option value="7">7 people</option>
+                    <option value="8">8 people</option>
+                    <option value="9">9 people</option>
+                    <option value="10">10 people</option>
+                </select>
+                <select name="hour" id="hour">
+                    <option value="12PM">12:00PM</option>
+                    <option value="12:30PM">12:30PM</option>
+                    <option value="1PM">1:00PM</option>
+                    <option value="1:30PM">1:30PM</option>
+                    <option value="2PM">2:00PM</option>
+                    <option value="2:30PM">2:30PM</option>
+                    <option value="3PM">3:00PM</option>
+                    <option value="3:30PM">3:30PM</option>
+                    <option value="4PM">4:00PM</option>
+                    <option value="4:30PM">4:30PM</option>
+                    <option value="5PM">5:00PM</option>
+                    <option value="5:30PM">5:30PM</option>
+                    <option value="6PM">6:00PM</option>
+                    <option value="6:30PM">6:30PM</option>
+                    <option value="7PM">7:00PM</option>
+                    <option value="7:30PM">7:30PM</option>
+                    <option value="8PM">8:00PM</option>
+                    <option value="8:30PM">8:30PM</option>
+                </select>
+                <input type="date" id="myDate" value="2021-07-26">
+                <input class="reserve" type="submit" value="RESERVE"/>
+            </div>
+        </footer>
+    </body>
+</html>
