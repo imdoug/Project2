@@ -69,14 +69,14 @@ restaurant.delete('/:id', (req,res)=>{
 })
 //SHOW ROUTE
 restaurant.get('/:id', (req,res)=>{
-    Restaurant.findById(req.params.id, (err, foundDish)=>{
+    Restaurant.find({}, (err, allDishes)=>{
         if(err){
             console.log(err)
         }else{
             res.render('show.ejs',
             {
-                dish: foundDish,
-                id: req.params.id
+                alldishes: allDishes,
+                id: req.params.id,
             }
             )
         }

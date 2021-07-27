@@ -2,28 +2,47 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>SHOW PAGE</title>
+    <title>MENU</title>
     <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
         img{
-            width: 30%;
+            width: 90%;
+        }
+        .container{
+            width: 80%;
+
+        }
+        form{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .box{
+            width: 33%;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <form action="/restaurant/<%=id%>?_method=DELETE" method="POST">
-            <h3><%=dish.name%></h3>
-            <div>
+            <% for(let i = 0; i < alldishes.length; i++){ %>
+            <div class="box">
+                <h3><%=alldishes[i].name%></h3>
                 <div>
-                    <img src="<%=dish.img%>">
+                    <img src="<%=alldishes[i].img%>">
                 </div>
-                <p class="ingridients"><%=dish.ingridients%></p>
-                <p class="price">$<%=dish.price%>,00</p>
-                <p tags="tags">#<%=dish.tags%></p>
+                <p class="ingridients"><%=alldishes[i].ingredients%></p>
+                <p class="price">$<%=alldishes[i].price%>,00</p>
+                <p tags="tags">#<%=alldishes[i].tags%></p>
+                <a href="/restaurant">BACK</a>
+                <a href="/restaurant/<%=alldishes[i].id%>/edit">EDIT</a>
+                <input class="delete" type="submit" value="DELETE"/>
             </div>
-            <a href="/restaurant">BACK</a>
-            <a href="/restaurant/<%=dish.id%>/edit">EDIT</a>
-            <input class="delete" type="submit" value="DELETE"/>
+            <% } %>
         </form>
     </div>   
 </body>
