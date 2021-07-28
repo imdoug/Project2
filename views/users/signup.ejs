@@ -3,21 +3,34 @@
     <head>
         <meta charset="utf-8">
         <title>SIGN UP</title>
+            <link rel="stylesheet" href="../../css/login-signup.css">
     </head>
     <body>
-        <h1>SIGN UP</h1>
-        <form action="/users" method="POST">
-            <table>
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text" name="username" placeholder="username"/></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="password" name="password" placeholder="password"/></td>
-                </tr>
-            </table>
-            <input type="submit" class="signup" value="SIGN UP"/>
-        </form>
+        <%- include ('../partials/info_navbar.ejs') %>
+        <div class="signup-container">
+            <div class="signup-box">
+                <h1>SIGN UP</h1>
+                <form action="/users" method="POST">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td><input type="text" name="username" placeholder="username"/></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><input type="password" name="password" placeholder="password"/></td>
+                        </tr>
+                    </table>
+                    <div class="button">
+                        <input type="submit" class="signup" value="SIGN UP"/>
+                    </div>
+                </form>
+                <div class="go-signup">
+                    <p>Are you part of the family already?</p>
+                    <a href="/sessions">LOGIN</a>
+                </div>
+            </div>
+        </div>
+        <%- include ('../partials/footer.ejs') %>
     </body>
 </html>

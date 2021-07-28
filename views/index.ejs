@@ -7,11 +7,7 @@
     </head>
     <body>
         <%- include ('./partials/info_navbar.ejs') %>
-            <nav>
-                <a href="/restaurant/new">create new item</a>
-            </nav>
-        </form>
-        <div class="carousel-container">
+        <div class="carousel-container" id="home">
             <div class="carousel">
             </div>
         </div>
@@ -20,14 +16,31 @@
             <img class="porkchop" src="https://i.ibb.co/vd3djkx/bg01.png">
         </div>
         <%- include ('./partials/about_section.ejs') %>
-        <h3 class="menu-healiner">MENU<h3>
+        <div id="menu"></div>
+        <h3 class="menu-healiner" id="menu">MENU<h3>
         <div class="menu-headline">
             <div class="headline">
                 <img class="headline-img" src="https://i.ibb.co/wKMNjMB/h4-bg.png">
             </div>
         </div>
         <%- include ('./partials/info_menu.ejs') %>
+        <div class="newyork">
+            <div class="content">
+                <div class="text-content">
+                    <h3 class="ny-text">NEW YORK</h3>
+                    <div class="mini-text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis deserunt ullam quod, similique quisquam nemo. Quidem architecto recusandae, eum impedit aliquam, similique dolor fuga fugit, quibusdam eveniet earum asperiores laboriosam?</p>
+                    </div>
+                </div>
+                <div class="video-content">
+                    <iframe src="https://player.vimeo.com/video/261915296" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
         <%- include ('./partials/reserve.ejs') %>
+        <div class="mint">
+            <img class="mint-img" src="https://i.ibb.co/cvfG5Pc/landing-pop-up-bottom-sheet.png">
+        </div>
         <%- include ('./partials/info_section.ejs') %>
         <%- include ('./partials/footer.ejs') %>
     </body>

@@ -131,12 +131,80 @@ h2{
     z-index: 2;
     background: #fff;
 }
+/* NYC */
+.newyork{
+    margin-top: 30px;
+}
+.content{
+    position: relative;
+    top: 50px;
+    display: flex;
+}
+.text-content{
+    width: 50%;
+    text-align: center;
+}
+.text-content > div > p{
+    width: 50%;
+    font-size: 1.1em;
+}
+.video-content{
+    width: 50%;
+}
+.ny-text{
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+.mini-text{
+    display: flex;
+    justify-content: center;
+}
+/* MINT */
+.mint{
+    position: relative;
+    left: -70px;
+    top: 100px;
+    margin-bottom: -350px;
+    width: 100%;
+    height: auto;
+}
+
+/* reserve headline */
+.headline-reserve{
+    position: relative;
+    top: 130px;
+    height: 200px;
+    background-color: #FBF9FA;
+    z-index: -1;
+}
+.reserve-container{
+    display: flex;
+    z-index: -1;
+}
+.reserv-text{
+    position: relative;
+    top: 10px;
+    margin-left: 15%;
+    font-size: 2em;
+    z-index: -1;
+}
+.reserv-img{
+    height: 200px;
+    justify-self: right;
+    z-index: -1;
+}
+.reserve-dish{
+    float: right;
+    width: 37%;
+    z-index: -1;
+}
 /* REVERVE SECTION */
 .reserve-section{
     margin: 50px 0px;
     display: flex;
     justify-content: center;
     width: 100%;
+    z-index: 2;
 }
 section{
     width: 100%;
@@ -151,6 +219,7 @@ section{
     width: 80%;
     height: 150px;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
 }             
 select{
     width: 250px;
@@ -169,10 +238,19 @@ select{
     padding: 3.5px 5px 0px 5px;
 }
 .reserve-input{
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 40px;
     margin: 0px;
-} 
+    background-color: #000;
+    color: #fff;
+    border: 0;
+}
+.reserve-input:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    background-color: #fff;
+}
 /* INFO LOCATION */
 .about-section{
     margin: 50px 0px 70px 0px;
