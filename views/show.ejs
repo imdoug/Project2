@@ -5,10 +5,13 @@
     <title>MENU</title>
     <style>
         body{
+            margin: 0;
+        }
+        .menu{
             display: flex;
             justify-content: center;
         }
-        img{
+        .box > div > img{
             width: 90%;
         }
         .container{
@@ -17,33 +20,81 @@
         }
         form{
             display: flex;
+            justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
             width: 100%;
+            border: 1px solid black;
+            padding: 2%;
         }
         .box{
             width: 33%;
         }
+        .header{
+            display: inline-flex;
+            height: 200px;
+            background-color: #FBF9FA;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .header-image{
+            width: 90%;
+            float: right;
+        }
+        .header-text{
+            text-align: center;
+            width: 100%;
+            align-self: center;
+            flex-wrap: wrap;
+        }
+        .image-box{
+            display: flex;
+            justify-content: end;
+            align-self: center;
+            width: 30%;
+        }
+        .something{
+            width: 30%;
+        }
+        hr{
+            width: 90%;
+            border: 1px dashed rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <form action="/restaurant/<%=id%>?_method=DELETE" method="POST">
-            <% for(let i = 0; i < alldishes.length; i++){ %>
-            <div class="box">
-                <h3><%=alldishes[i].name%></h3>
-                <div>
-                    <img src="<%=alldishes[i].img%>">
+    <%- include ('./partials/info_navbar.ejs') %>
+    <div class="header">
+        <div class="something"></div>
+        <div class="header-text">
+            <h3>DELIVERY OR TAKEAWAY</h3>
+            <p>We are open for delivery from 3:30pm to 9:30pm daily</p>
+        </div>
+        <div class="image-box">
+            <img class="header-image" src="https://i.ibb.co/3FXXsZ9/h3-bg.png">
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <form action="/restaurant/<%=id%>?_method=DELETE" method="POST">
+                <% for(let i = 0; i < alldishes.length; i++){ %>
+                <div class="box">
+                    <h3><%=alldishes[i].name%></h3>
+                    <div>
+                        <img clas="dishes" src="<%=alldishes[i].img%>">
+                    </div>
+                    <p class="ingridients"><%=alldishes[i].ingredients%></p>
+                    <p class="price">$<%=alldishes[i].price%>.00</p>
+                    <p tags="tags">#<%=alldishes[i].tags%></p>
+                    <a href="/restaurant">BACK</a>
+                    <a href="/restaurant/<%=alldishes[i].id%>/edit">EDIT</a>
+                    <input class="delete" type="submit" value="DELETE"/>
+                    <hr>
                 </div>
-                <p class="ingridients"><%=alldishes[i].ingredients%></p>
-                <p class="price">$<%=alldishes[i].price%>,00</p>
-                <p tags="tags">#<%=alldishes[i].tags%></p>
-                <a href="/restaurant">BACK</a>
-                <a href="/restaurant/<%=alldishes[i].id%>/edit">EDIT</a>
-                <input class="delete" type="submit" value="DELETE"/>
-            </div>
-            <% } %>
-        </form>
-    </div>   
+                <% } %>
+            </form>
+        </div>   
+    </div>
+    <%- include ('./partials/footer.ejs') %>
 </body>
 </html>

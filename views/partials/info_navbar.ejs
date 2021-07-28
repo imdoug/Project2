@@ -3,12 +3,19 @@
     <head>
         <meta charset="utf-8">
         <title>MENU</title>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            nav{
+            .navigation{
+                position: fixed;
+                top: 0;
                 padding: 20px 0px;
                 display: inline-flex;
                 justify-content: space-around;
                 width: 100%;
+                background: white;
+                z-index: 99;
+                box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
             }
             a{
                 font-size: 1.5em;
@@ -21,18 +28,21 @@
                 padding: 5px;
                 border: 1px solid gold;
             }
+            .fa-user-circle{
+                font-size: 1.5em;
+            }     
         </style>
     </head>
     <body>
         <header>
-            <nav>
+            <nav class="navigation">
                 <a>LOGO</a>
                 <a href="home">HOME</a>
                 <a href="about">ABOUT</a>
                 <a href="menu">MENU</a>
                 <a href="info">LOCATION & HOURS</a>
-                <a href="#"class="profile">PROFILE</a>
-                <a href="#" class="cart">CART</a>
+                <a href="#"class="profile"><i class='fas fa-user-circle'></i></a>
+                <a href="#" class="cart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
             </nav>
         </header>
     </body>

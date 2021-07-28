@@ -1,0 +1,12 @@
+<form action="/sessions?_method=DELETE" method="POST">
+    <h1>RESTAURANT INDEX PAGE </h1>
+    <a href="/users" class="signup">SIGN UP</a>
+    <a href="/sessions" class="signup">LOGIN</a>
+    <% if (currentUser) {%>
+        <input type="submit" value="LOG OUT"/>
+    <% } %>
+    <ul>
+        <% for(let i = 0; i < dishes.length; i++){ %>
+            <li><a href="/restaurant/<%=dishes[i].id%>"><%=dishes[i].name%></a></li>
+            <% } %>
+    </ul>

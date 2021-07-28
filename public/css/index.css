@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+body{
+    margin: 0;
+    font-family: 'Karla', sans-serif;
+    overflow-x: hidden;
+}
+/* CAROUSEL */
+.carousel-container{
+    display: flex;
+    justify-content: center;
+}
+.carousel{
+    width: 90%;
+    height: 400px;
+    background-image: url('https://i.ibb.co/zXmVHdd/top-slideshow.png');
+    background-size: cover;
+}
+/* ABOUT PHOTOS */
+.image-left{
+    position: relative;
+    top: 630px;
+    margin-top: -430px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.pepper{
+    position: relative;
+    left: -150px;
+    width: 25%;
+    overflow: hidden;
+}
+.porkchop{
+    position: relative;
+    left: 100px;
+    width: 25%;
+    overflow: hidden;
+    
+}
+/* ABOUT */
+.about-section{
+    display: flex;
+    justify-content: center;
+}
+.about-pic{
+    position: relative;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+.chef >img{
+    width: 100%;
+}
+.about > p{
+    font-size: 1.5em;
+}
+.chef{
+    width: 50%;
+}
+.about{
+    width: 50%;
+    padding-left: 10px;
+}
+/* MENU HEADLINE */
+.menu-headline{
+    position: relative;
+    top: 80px;
+    background: #F2F1EF;
+    height: 200px;
+    z-index: -1;
+}
+.headline-img{
+    float: left;
+    width: 27%;
+}
+.headline{
+    height: 200px;
+}
+.menu-healiner{
+    position: relative;
+    top: 230px;
+    width: 23%;
+    text-align: right;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+/* MENU */
+.colunm-one{ 
+    width: 32%;
+}
+hr{
+    width: 90%;
+    border:  1px dashed rgba(0,0,0,0.3);
+}
+.price{
+    display: flex;
+}
+.menu{
+    display: inline-flex;
+    justify-content: center;
+    width: 90%;
+}
+h2{
+    padding-bottom: 20px;
+}
+.menu-master{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+    padding: 10px;
+}
+.order{
+    margin-top: 100px;
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+}
+.menu-box{
+    display: flex;
+    justify-content: center;
+}
+.menu-container{
+    margin: 0 auto;
+    width: 75%;
+    padding: 10px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    background: #fff;
+}
+/* REVERVE SECTION */
+.reserve-section{
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+section{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+#reserve{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 150px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+}             
+select{
+    width: 250px;
+    height: 30px;
+    font-size: 1em;
+    padding-inline-start: 5px;
+    border: 1px solid black;
+}
+.reserve > input{
+    font-size: 1em;
+    width: 250px;
+    height: 25px;
+    padding-inline-start: 5px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    padding: 3.5px 5px 0px 5px;
+}
+.reserve-input{
+    width: 100px;
+    height: 30px;
+    margin: 0px;
+} 
+/* INFO LOCATION */
+.about-section{
+    margin: 50px 0px 70px 0px;
+    display: flex;
+    justify-content: center;
+}
+.map{
+    filter:grayscale(1);
+    width: 600px;
+    height: 200px;
+}
+.location{
+    display: flex;
+}
+.location-info{
+    margin-left: 250px;
+}
+.location-info > p{
+    font-size: .82em;
+}
+p.last{
+    margin-top: 0;
+}
+tr > p{
+    margin-bottom: 0px;
+} 
+/* FOOTER */
+footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: white;
+    background-color: #000;
+}
+footer > a{
+    text-decoration: none;
+}
+footer > a+a{
+    margin-left: 2%;
+}
+.fa{
+    font-size: 1.5em;
+    color: white;
+}
+.fa-instagram:hover{
+    color: #f40083;
+}
+.fa-linkedin:hover{
+    color: #007bb5;
+}
+footer > div{
+    text-align: center;
+}
+footer > h3{
+    letter-spacing: 1px;
+}
+footer > p{
+    font-size: 1.2em;
+}
+.order-div{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+

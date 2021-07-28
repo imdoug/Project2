@@ -3,23 +3,32 @@
     <head>
         <meta charset="utf-8">
         <title>INDEX PAGE</title>
+        <link rel="stylesheet" href="/css/index.css">
     </head>
     <body>
-        <form action="/sessions?_method=DELETE" method="POST">
-            <h1>RESTAURANT INDEX PAGE </h1>
-            <a href="/users" class="signup">SIGN UP</a>
-            <a href="/sessions" class="signup">LOGIN</a>
-            <% if (currentUser) {%>
-                <input type="submit" value="LOG OUT"/>
-            <% } %>
-            <ul>
-                <% for(let i = 0; i < dishes.length; i++){ %>
-                    <li><a href="/restaurant/<%=dishes[i].id%>"><%=dishes[i].name%></a></li>
-                    <% } %>
-            </ul>
+        <%- include ('./partials/info_navbar.ejs') %>
             <nav>
                 <a href="/restaurant/new">create new item</a>
             </nav>
         </form>
+        <div class="carousel-container">
+            <div class="carousel">
+            </div>
+        </div>
+        <div class="image-left">
+            <img class="pepper"src="https://i.ibb.co/sq1VzFM/pepers-image.png">
+            <img class="porkchop" src="https://i.ibb.co/vd3djkx/bg01.png">
+        </div>
+        <%- include ('./partials/about_section.ejs') %>
+        <h3 class="menu-healiner">MENU<h3>
+        <div class="menu-headline">
+            <div class="headline">
+                <img class="headline-img" src="https://i.ibb.co/wKMNjMB/h4-bg.png">
+            </div>
+        </div>
+        <%- include ('./partials/info_menu.ejs') %>
+        <%- include ('./partials/reserve.ejs') %>
+        <%- include ('./partials/info_section.ejs') %>
+        <%- include ('./partials/footer.ejs') %>
     </body>
 </html>
