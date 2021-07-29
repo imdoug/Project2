@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+}
+.box > div > img{
+    width: 85%;
+}
+.container{
+    width: 80%;
+
+}
+.show{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    margin: 0;
+}
+.box{
+    text-align: center;
+    width: 26.6%;
+    margin: 0 auto;
+}
+.header{
+    display: inline-flex;
+    height: 200px;
+    background-color: #FBF9FA;
+    margin: 70px 0px 20px 0px;
+    width: 100%;
+}
+.header-image{
+    width: 90%;
+    float: right;
+}
+.header-text{
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    flex-wrap: wrap;
+}
+.image-box{
+    display: flex;
+    justify-content: end;
+    align-self: center;
+    width: 30%;
+}
+.something{
+    width: 30%;
+}
+.side{
+    margin-top: 30px;
+    border: 1px dashed rgba(0,0,0,0.3);
+    height: 400px;
+}
+.bottom{
+    margin-top: 20px;
+    width: 90%;
+    border: 1px dashed rgba(0,0,0,0.3);
+}
+/* footer */
+footer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: white;
+    background-color: #000;
+}
+footer > a{
+    text-decoration: none;
+}
+footer > a+a{
+    margin-left: 2%;
+}
+.fa{
+    font-size: 1.5em;
+    color: white;
+}
+.fa-instagram:hover{
+    color: #f40083;
+}
+.fa-linkedin:hover{
+    color: #007bb5;
+}
+footer > div{
+    text-align: center;
+}
+footer > h3{
+    letter-spacing: 1px;
+}
+footer > p{
+    font-size: 1.2em;
+}
+/*  */
+.add-to-order{
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+}
+.add-to-order:hover{
+    background: #000;
+    color: #fff;
+}
+/*  */
+.order-div{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+/* create button */
+.create-button{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+}
+.create{
+    padding: 10px;
+    border: 1px solid #000;
+}
+.create:hover{
+    background-color: #000;
+    color: #fff;
+}

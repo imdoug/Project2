@@ -5,7 +5,8 @@ const User = require('../models/users.js')
 
 //SIGN UP ROUTE
 users.get('/', (req,res)=>{
-    res.render('users/signup.ejs')
+    res.render('users/signup.ejs',
+    {currentUser: req.session.currentUser})
 })
 // SIGN UP POST
 users.post('/', (req,res)=>{

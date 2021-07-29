@@ -5,7 +5,8 @@ const User = require('../models/users.js')
 
 //LOG IN ROUTE
 sessions.get('/', (req,res)=>{
-    res.render('session/login.ejs')
+    res.render('session/login.ejs',
+    {currentUser: req.session.currentUser})
 })
 //CREATING THE SECTION
 sessions.post('/',(req,res)=>{
@@ -24,6 +25,11 @@ sessions.post('/',(req,res)=>{
             }
         }
     })
+})
+
+sessions.get('/kart', (req,res)=>{
+    res.render('session/kart.ejs',
+    {currentUser: req.session.currentUser})
 })
 
 sessions.delete('/', (req,res)=>{

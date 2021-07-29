@@ -10,7 +10,7 @@ body{
     justify-content: center;
     height: 500px;
 }
-form{
+.user{
     padding: 50px;
     background: #fff;
     font-size: 1.5;

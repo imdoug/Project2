@@ -6,44 +6,71 @@
         <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
-            .navigation{
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+            header{
                 position: fixed;
                 top: 0;
-                padding: 20px 0px;
-                display: inline-flex;
-                justify-content: space-around;
                 width: 100%;
-                background: white;
+                display: flex;
+                justify-content: center;
+                background-color: #fff;
                 z-index: 99;
-                box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+                height: 59px;
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
             }
-            a{
-                font-size: 1.5em;
+            .navigation{
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 75%;
+                background: white;
+                z-index: 98;
+            }
+            .navigation > a + a{
+                font-size: 1em;
                 letter-spacing: 1px;
                 text-decoration: none;
                 color: #000;
             }
-            .reserve{
-                margin: -5px 0px;
+            .signin{
                 padding: 5px;
-                border: 1px solid gold;
+                border: 1px solid black;
+            }
+            .signin:hover{
+                background-color: black;
+                color: #fff;
             }
             .fa-user-circle{
                 font-size: 1.5em;
-            }     
+            }
+            .logo-nav{
+                font-size: 1.5em;
+                font-family: 'Josefin Sans', sans-serif;
+                letter-spacing: 1px;
+                text-decoration: none;
+                color: #000;
+            }
         </style>
     </head>
     <body>
-        <header>
-            <nav class="navigation">
-                <a>LOGO</a>
-                <a href="/restaurant/#home">HOME</a>
-                <a href="/restaurant/#about">ABOUT</a>
-                <a href="/restaurant/#menu">MENU</a>
-                <a href="/restaurant/#info">LOCATION & HOURS</a>
-                <a href="/users"class="profile"><i class='fas fa-user-circle'></i></a>
-                <a href="#" class="cart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
-            </nav>
-        </header>
+        <form  class="logout" action="/sessions?_method=DELETE" method="POST">
+            <header>
+                <nav class="navigation">
+                    <a href="/restaurant" class="logo-nav">AMORES</a>
+                    <a href="/restaurant/#home">HOME</a>
+                    <a href="/restaurant/#about">ABOUT</a>
+                    <a href="/restaurant/#menu">MENU</a>
+                    <a href="/restaurant/#info">LOCATION & HOURS</a>
+                    <% if(currentUser) { %>
+                    <input type="submit" value="LOG OUT">
+                    <a href="/sessions/kart" class="cart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
+                     <% } else { %>
+                        <a class="signin" href="/users">SIGN IN</a>
+                        <a href="/users" class="cart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
+                    <!-- <a href="/users"class="profile"><i class='fas fa-user-circle'></i></a> -->
+                    <% } %>
+                </nav>
+            </header>
+        </form> 
     </body>
 </html>

@@ -3,105 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MENU</title>
-    <style>
-        body{
-            margin: 0;
-        }
-        .menu{
-            display: flex;
-            justify-content: center;
-        }
-        .box > div > img{
-            width: 90%;
-        }
-        .container{
-            width: 80%;
-
-        }
-        form{
-            display: flex;
-            justify-content: center;
-            flex-direction: row;
-            flex-wrap: wrap;
-            width: 100%;
-            border: 1px solid black;
-            padding: 2%;
-        }
-        .box{
-            width: 33%;
-            margin: 0 auto;
-        
-        }
-        .header{
-            display: inline-flex;
-            height: 200px;
-            background-color: #FBF9FA;
-            margin: 80px 0px 20px 0px;
-            width: 100%;
-        }
-        .header-image{
-            width: 90%;
-            float: right;
-        }
-        .header-text{
-            text-align: center;
-            width: 100%;
-            align-self: center;
-            flex-wrap: wrap;
-        }
-        .image-box{
-            display: flex;
-            justify-content: end;
-            align-self: center;
-            width: 30%;
-        }
-        .something{
-            width: 30%;
-        }
-        hr{
-            width: 90%;
-            border: 1px dashed rgba(0,0,0,0.3);
-        }
-        footer{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    color: white;
-    background-color: #000;
-}
-footer > a{
-    text-decoration: none;
-}
-footer > a+a{
-    margin-left: 2%;
-}
-.fa{
-    font-size: 1.5em;
-    color: white;
-}
-.fa-instagram:hover{
-    color: #f40083;
-}
-.fa-linkedin:hover{
-    color: #007bb5;
-}
-footer > div{
-    text-align: center;
-}
-footer > h3{
-    letter-spacing: 1px;
-}
-footer > p{
-    font-size: 1.2em;
-}
-.order-div{
-    margin-top: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-    </style>
+    <link rel="stylesheet" href="../../css/show.css">
 </head>
 <body>
     <%- include ('./partials/info_navbar.ejs') %>
@@ -117,7 +19,8 @@ footer > p{
     </div>
     <div class="menu">
         <div class="container">
-            <form action="/restaurant/<%=id%>?_method=DELETE" method="POST">
+            <% if(currentUser){ %>
+            <form class="show" action="/restaurant/<%=id%>?_method=DELETE" method="POST">
                 <% for(let i = 0; i < alldishes.length; i++){ %>
                 <div class="box">
                     <h3><%=alldishes[i].name%></h3>
@@ -134,7 +37,31 @@ footer > p{
                 </div>
                 <% } %>
             </form>
-        </div>   
+            <div class="create-button">
+                <a class="create" href="/restaurant/new">CREATE NEW DISH</a>
+            </div>
+            <% } else { %>
+                <form class="show" action="/restaurant/<%=id%>?_method=DELETE" method="POST">
+                    <% for(let i = 0; i < alldishes.length; i++){ %>
+                    <div class="box">
+                        <h3><%=alldishes[i].name%></h3>
+                        <div>
+                            <img clas="dishes" src="<%=alldishes[i].img%>">
+                        </div>
+                        <p class="ingridients"><%=alldishes[i].ingredients%></p>
+                        <p class="price">$<%=alldishes[i].price%>.00</p>
+                        <a class="add-to-order" href="/restaurant">ADD TO ORDER</a>
+                        <hr class="bottom">
+                    </div>
+                    <% if(i == 2 || i == 5 || i == 8 || i == 11){ %>
+
+                    <% } else { %>
+                        <div class="side"></div>
+                    <% } %>
+                    <% } %>
+                </form>
+            <% } %>
+        </div>  
     </div>
     <%- include ('./partials/footer.ejs') %>
 </body>

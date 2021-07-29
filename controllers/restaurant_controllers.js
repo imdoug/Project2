@@ -4,7 +4,8 @@ const restaurant = express.Router()
 
 //NEW PAGE
 restaurant.get('/new', (req,res)=>{
-    res.render('new.ejs')
+    res.render('new.ejs', 
+    {currentUser: req.session.currentUser})
 })
 //CREATE ON DATABASE
 restaurant.post('/', (req,res)=>{
@@ -29,6 +30,7 @@ restaurant.get('/', (req,res)=>{
             res.render('index.ejs', 
             {
                 dishes: allDishes,
+                currentUser: req.session.currentUser,
                 currentUser: req.session.currentUser
             }
             )
@@ -41,7 +43,8 @@ restaurant.get('/:id/edit', (req,res)=>{
         res.render('edit.ejs',
         {
             dish:foundDish,
-            id: req.params.id
+            id: req.params.id,
+            currentUser: req.session.currentUser
         }
         )
     })
@@ -77,6 +80,7 @@ restaurant.get('/:id', (req,res)=>{
             {
                 alldishes: allDishes,
                 id: req.params.id,
+                currentUser: req.session.currentUser
             }
             )
         }
