@@ -98,6 +98,7 @@ body{
     font-size: 5em;
     color: #fff;
     letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 /* MENU */
 .colunm-one{ 
@@ -170,31 +171,35 @@ body{
 }
 /* NYC */
 .newyork{
+    display: flex;
+    justify-content: center;
     margin-top: 30px;
 }
 .content{
     position: relative;
     top: 50px;
     display: flex;
+    width: 76%;
 }
 .text-content{
-    width: 50%;
-    text-align: center;
+    width: 40%;
+    /* text-align: center; */
 }
 .text-content > div > p{
-    width: 50%;
-    font-size: 1.1em;
+    width: 90%;
 }
 .video-content{
-    width: 50%;
+    width: 60%;
 }
-.ny-text{
-    font-size: 2em;
-    letter-spacing: 1px;
+.nyc-text{
+   padding-left: 5%;
 }
 .mini-text{
     display: flex;
     justify-content: center;
+    font-size: 1em;
+    letter-spacing: 1px;
+    line-height: 1.7;
 }
 /* MINT */
 .mint{
@@ -220,10 +225,11 @@ body{
 }
 .reserv-text{
     position: relative;
-    top: 10px;
+    top: 35px;
     margin-left: 15%;
-    font-size: 2em;
+    font-size: 3em;
     z-index: -1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 .reserv-img{
     height: 200px;
@@ -232,7 +238,7 @@ body{
 }
 .reserve-dish{
     float: right;
-    width: 37%;
+    width: 57%;
     z-index: -1;
 }
 /* REVERVE SECTION */
@@ -251,36 +257,36 @@ section{
 }
 #reserve{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    width: 80%;
+    width: 76%;
     height: 150px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
     background-color: #fff;
 }             
 select{
     width: 250px;
-    height: 30px;
+    height: 40px;
     font-size: 1em;
     padding-inline-start: 5px;
     border: 1px solid black;
 }
-.reserve > input{
-    font-size: 1em;
+.date{
+    font-size: 1.3em;
     width: 250px;
-    height: 25px;
+    height: 35px;
     padding-inline-start: 5px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     border: 1px solid black;
     padding: 3.5px 5px 0px 5px;
-}
+} 
 .reserve-input{
-    width: 150px;
-    height: 40px;
+    padding: 11px 40px;
     margin: 0px;
     background-color: #000;
     color: #fff;
     border: 0;
+    text-decoration: none;
 }
 .reserve-input:hover{
     cursor: pointer;
@@ -288,9 +294,13 @@ select{
     color: black;
     background-color: #fff;
 }
+.reserve-title{
+    color: #fff;
+
+}
 /* INFO LOCATION */
 .about-section{
-    margin: 50px 0px 70px 0px;
+    margin: 50px 0px 90px 0px;
     display: flex;
     justify-content: center;
 }
@@ -303,24 +313,34 @@ select{
     display: flex;
 }
 .location-info{
+    padding-top: 10px;
     margin-left: 250px;
 }
 .location-info > p{
-    font-size: .82em;
+    font-size: 1em;
 }
 p.last{
     margin-top: 0;
 }
 tr > p{
     margin-bottom: 0px;
-} 
+}
+.info-text{
+    margin: 0px;
+    letter-spacing: 1px;
+}
+.info-title{
+    margin-bottom: 0;
+    color: #999;
+    letter-spacing: 1px;
+}
 /* FOOTER */
 footer{
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 160px;
     color: white;
     background-color: #000;
 }
@@ -331,8 +351,15 @@ footer > a+a{
     margin-left: 2%;
 }
 .fa{
-    font-size: 1.5em;
+    font-size: 2em;
     color: white;
+    text-decoration: none;
+}
+.fa +.fa{
+    margin-left: 1%;
+}
+.fa-instagram{
+    font-size: 2em;
 }
 .fa-instagram:hover{
     color: #f40083;
@@ -347,7 +374,19 @@ footer > h3{
     letter-spacing: 1px;
 }
 footer > p{
+    margin: 0;
     font-size: 1.2em;
+}
+.copy{
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+.footer-title{
+    margin: 10px 0px 0px 0px;
+}
+.footer-info{
+    margin-top: 0;
+    letter-spacing: 1px;
 }
 .order-div{
     margin-top: 20px;

@@ -32,13 +32,27 @@
                 text-decoration: none;
                 color: #000;
             }
-            .signin{
+            .signin, .btn-logout{
                 padding: 5px;
                 border: 1px solid black;
+                background: #fff;
             }
-            .signin:hover{
+            .signin:hover,.btn-logout:hover{
+                cursor: pointer;
                 background-color: black;
                 color: #fff;
+            }
+            #nav-order{
+                padding: 6px;
+                color: #fff;
+                background: #000;
+            }
+            #nav-order:hover{
+                cursor: pointer;
+                border: 1px solid #000;
+                color: #000;
+                background: white;
+                padding: 5px;
             }
             .fa-user-circle{
                 font-size: 1.5em;
@@ -50,6 +64,11 @@
                 text-decoration: none;
                 color: #000;
             }
+            .kart{
+                padding: 5px 10px;
+                border: 1px solid black;
+                background: #fff;
+            }
         </style>
     </head>
     <body>
@@ -59,16 +78,20 @@
                     <a href="/restaurant" class="logo-nav">AMORES</a>
                     <a href="/restaurant/#home">HOME</a>
                     <a href="/restaurant/#about">ABOUT</a>
-                    <a href="/restaurant/#menu">MENU</a>
-                    <a href="/restaurant/#info">LOCATION & HOURS</a>
                     <% if(currentUser) { %>
-                    <input type="submit" value="LOG OUT">
-                    <a href="/sessions/kart" class="cart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
+                    <a href="/restaurant/#info">LOCATION & HOURS</a>
+                    <a href="/restaurant/show">MENU</a>
+                    <input class="btn-logout" type="submit" value="LOG OUT">
+                    <a href="/users"class="profile" style="color: #000" ><i class='fas fa-user-circle'></i></a>
+                    <a href="/users/kart" class="kart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
                      <% } else { %>
-                        <a class="signin" href="/users">SIGN IN</a>
-                        <a href="/users" class="cart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
-                    <!-- <a href="/users"class="profile"><i class='fas fa-user-circle'></i></a> -->
+                        <a href="/restaurant/#menu">MENU</a>
+                        <a href="/restaurant/#info">LOCATION & HOURS</a>
+                        <a class="signin" href="/sessions">SIGN IN</a>
+                        <a id="nav-order" href="/restaurant/show">ORDER NOW</a>
+                        <a href="/sessions" class="kart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
                     <% } %>
+                   
                 </nav>
             </header>
         </form> 

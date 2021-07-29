@@ -17,6 +17,7 @@ sessions.post('/',(req,res)=>{
         }else if(!foundUser){
             res.send('<a href="/restaurant">Sorry, no username found<a/>')
         }else{
+            console.log(foundUser)
             if(bcrypt.compareSync(req.body.password, foundUser.password)){
                 req.session.currentUser = foundUser
                 res.redirect('/restaurant')
@@ -25,11 +26,6 @@ sessions.post('/',(req,res)=>{
             }
         }
     })
-})
-
-sessions.get('/kart', (req,res)=>{
-    res.render('session/kart.ejs',
-    {currentUser: req.session.currentUser})
 })
 
 sessions.delete('/', (req,res)=>{

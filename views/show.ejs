@@ -20,29 +20,9 @@
     <div class="menu">
         <div class="container">
             <% if(currentUser){ %>
-            <form class="show" action="/restaurant/<%=id%>?_method=DELETE" method="POST">
+                <% if(currentUser.username == "adm"){ %>
                 <% for(let i = 0; i < alldishes.length; i++){ %>
-                <div class="box">
-                    <h3><%=alldishes[i].name%></h3>
-                    <div>
-                        <img clas="dishes" src="<%=alldishes[i].img%>">
-                    </div>
-                    <p class="ingridients"><%=alldishes[i].ingredients%></p>
-                    <p class="price">$<%=alldishes[i].price%>.00</p>
-                    <p tags="tags">#<%=alldishes[i].tags%></p>
-                    <a href="/restaurant">BACK</a>
-                    <a href="/restaurant/<%=alldishes[i].id%>/edit">EDIT</a>
-                    <input class="delete" type="submit" value="DELETE"/>
-                    <hr>
-                </div>
-                <% } %>
-            </form>
-            <div class="create-button">
-                <a class="create" href="/restaurant/new">CREATE NEW DISH</a>
-            </div>
-            <% } else { %>
-                <form class="show" action="/restaurant/<%=id%>?_method=DELETE" method="POST">
-                    <% for(let i = 0; i < alldishes.length; i++){ %>
+                <form class="show" action="/restaurant/<%=alldishes[i].id%>?_method=DELETE" method="POST">
                     <div class="box">
                         <h3><%=alldishes[i].name%></h3>
                         <div>
@@ -50,7 +30,8 @@
                         </div>
                         <p class="ingridients"><%=alldishes[i].ingredients%></p>
                         <p class="price">$<%=alldishes[i].price%>.00</p>
-                        <a class="add-to-order" href="/restaurant">ADD TO ORDER</a>
+                        <a class="edit "href="/restaurant/<%=alldishes[i].id%>/edit">EDIT</a>
+                        <input class="delete" type="submit" value="DELETE"/>
                         <hr class="bottom">
                     </div>
                     <% if(i == 2 || i == 5 || i == 8 || i == 11){ %>
@@ -58,8 +39,51 @@
                     <% } else { %>
                         <div class="side"></div>
                     <% } %>
+            </form>
+            <% } %>
+            <div class="create-button">
+                <a class="create" href="/restaurant/new">CREATE NEW DISH</a>
+            </div>
+            <% } else { %> 
+                <% for(let i = 0; i < alldishes.length; i++){ %>
+                    <form class="show" action="/users/<%=alldishes[i].id%>?_method=PUT" method="POST">
+                        <div class="box">
+                            <h3><%=alldishes[i].name%></h3>
+                            <div>
+                                <img clas="dishes" src="<%=alldishes[i].img%>">
+                            </div>
+                            <p class="ingridients"><%=alldishes[i].ingredients%></p>
+                            <p class="price">$<%=alldishes[i].price%>.00</p>
+                            <input type="submit" class="add-to-order" value="ADD TO ORDER"/>
+                            <hr class="bottom">
+                        </div>
+                        <% if(i == 2 || i == 5 || i == 8 || i == 11){ %>
+    
+                            <% } else { %>
+                                <div class="side"></div>
+                            <% } %>
+                    </form>
                     <% } %>
+                <%} %>
+            <% } else { %>
+                <% for(let i = 0; i < alldishes.length; i++){ %>
+                <form class="show" action="/restaurant/<%=id%>?_method=DELETE" method="POST">
+                    <div class="box">
+                        <h3><%=alldishes[i].name%></h3>
+                        <div>
+                            <img clas="dishes" src="<%=alldishes[i].img%>">
+                        </div>
+                        <p class="ingridients"><%=alldishes[i].ingredients%></p>
+                        <p class="price">$<%=alldishes[i].price%>.00</p>
+                        <hr class="bottom">
+                    </div>
+                    <% if(i == 2 || i == 5 || i == 8 || i == 11){ %>
+
+                        <% } else { %>
+                            <div class="side"></div>
+                        <% } %>
                 </form>
+                <% } %>
             <% } %>
         </div>  
     </div>

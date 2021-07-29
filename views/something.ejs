@@ -1,12 +1,26 @@
-<form action="/sessions?_method=DELETE" method="POST">
-    <h1>RESTAURANT INDEX PAGE </h1>
-    <a href="/users" class="signup">SIGN UP</a>
-    <a href="/sessions" class="signup">LOGIN</a>
-    <% if (currentUser) {%>
-        <input type="submit" value="LOG OUT"/>
-    <% } %>
-    <ul>
-        <% for(let i = 0; i < dishes.length; i++){ %>
-            <li><a href="/restaurant/<%=dishes[i].id%>"><%=dishes[i].name%></a></li>
-            <% } %>
-    </ul>
+<% if (currentUser) { %>
+    <% if (cuurentUser.kart.length === 0 ) { %>
+
+    <% } else { %>
+        <% for(let i = 0; i < alldishes.length; i++){ %>
+            <form class="show" action="/sessions/<%=alldishes[i].id%>?_method=DELETE" method="POST">
+                <div class="box">
+                <   h3><%=alldishes[i].name%></h3>
+                    <div>
+                       <img clas="dishes" src="<%=alldishes[i].img%>">
+                    </div>
+                    <p class="ingridients"><%=alldishes[i].ingredients%></p>
+                    <p class="price">$<%=alldishes[i].price%>.00</p>
+                    <a class="edit "href="/restaurant/<%=alldishes[i].id%>/edit">EDIT</a>
+                    <input class="delete" type="submit" value="REMOVE"/>
+                    <hr class="bottom">
+                </div>
+                <% if(i == 2 || i == 5 || i == 8 || i == 11){ %>
+
+                <% } else { %>
+                    <div class="side"></div>
+                <% } %>
+        </form>
+        <% } %>
+    <% } %> 
+<% } %>

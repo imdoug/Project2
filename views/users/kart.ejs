@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    /*  */
+    .box{
+    width: 33%;
+    margin: 0 auto;
+    }
+    .header{
+        display: inline-flex;
+        height: 200px;
+        background-color: #FBF9FA;
+        margin: 60px 0px 20px 0px;
+        width: 100%;
+    }
+    .header-image{
+        width: 90%;
+        float: right;
+    }
+    .header-text{
+        text-align: center;
+        width: 100%;
+        align-self: center;
+        flex-wrap: wrap;
+    }
+    .image-box{
+        display: flex;
+        justify-content: end;
+        align-self: center;
+        width: 30%;
+    }
+    .something{
+    width: 30%;
+    }
+    /* footer */
+    footer{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 160px;
+        color: white;
+        background-color: #000;
+    }
+    footer > a{
+        text-decoration: none;
+    }
+    footer > a+a{
+        margin-left: 2%;
+    }
+    .fa{
+        font-size: 2em;
+        color: white;
+        text-decoration: none;
+    }
+    .fa +.fa{
+        margin-left: 1%;
+    }
+    .fa-instagram{
+        font-size: 2em;
+    }
+    .fa-instagram:hover{
+        color: #f40083;
+    }
+    .fa-linkedin:hover{
+        color: #007bb5;
+    }
+    footer > div{
+        text-align: center;
+    }
+    footer > h3{
+        letter-spacing: 1px;
+    }
+    footer > p{
+        margin: 0;
+        font-size: 1.2em;
+    }
+    .copy{
+        margin-bottom: 0;
+        letter-spacing: 1px;
+    }
+    .footer-title{
+        margin: 10px 0px 0px 0px;
+    }
+    .footer-info{
+        margin-top: 0;
+        letter-spacing: 1px;
+    }
+    /* CHECKOUT BUTTON */
+    .create-button{
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        height: 60px;
+        align-items: center;
+    }
+    .create{
+        color: #000;
+        padding: 10px;
+        border: 1px solid #000;
+        background: #fff;
+        text-decoration: none;
+    }
+    .create:hover, .add-to-order:hover{
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+    }
+    .menu{
+        display: inline-flex;
+        justify-content: center;
+    }
+    .box > div > img{
+        width: 85%;
+    }
+    .container{
+        width: 80%;
+
+    }
+    .show{
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 33%;
+        margin: 0;
+    }
+    .box{
+        text-align: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+</style>
+<body>
+    <%- include ('../partials/info_navbar.ejs') %>
+    <div class="header">
+        <div class="something"></div>
+        <div class="header-text">
+            <h3>DELIVERY OR TAKEAWAY</h3>
+            <p>We are open for delivery from 3:30pm to 9:30pm daily</p>
+        </div>
+        <div class="image-box">
+            <img class="header-image" src="https://i.ibb.co/3FXXsZ9/h3-bg.png">
+
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <% if (kart.length === undefined) { %>
+                <h1>im coming here!</h1>
+            <% } else { %>
+                <% for(let i = 0; i < kart.length; i++){ %>
+                    <form class="show" action="/users/<%=kart[i]._id%>?_method=DELETE" method="POST">
+                    <div class="box">
+                        <h3><%=kart[i].name%></h3>
+                        <div>
+                            <img clas="dishes" src="<%=kart[i].img%>">
+                        </div>
+                        <p class="ingridients"><%=kart[i].ingredients%></p>
+                        <p class="price">$<%=kart[i].price%>.00</p>
+                        <input type="submit" class="create" value="REMOVE"/>
+                        <hr class="bottom">
+                    </div>
+                    <% if(i == 2 || i == 5 || i == 8 || i == 11){ %>
+
+                        <% } else { %>
+                            <div class="side"></div>
+                        <% } %>
+                </form>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+    <div class="create-button">
+        <a class="create" href="/restaurant/">CHECK OUT</a>
+    </div>
+    <%- include ('../partials/footer.ejs') %>
+</body>
+</html>
