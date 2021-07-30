@@ -46,7 +46,7 @@
             </div>
             <% } else { %> 
                 <% for(let i = 0; i < alldishes.length; i++){ %>
-                    <form class="show" action="/users/<%=alldishes[i].id%>?_method=PUT" method="POST">
+                    <form class="show" action="/sessions/<%=alldishes[i].id%>?_method=PUT" method="POST">
                         <div class="box">
                             <h3><%=alldishes[i].name%></h3>
                             <div>

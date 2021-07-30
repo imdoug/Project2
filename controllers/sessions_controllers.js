@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const express = require('express')
 const sessions = express.Router()
 const User = require('../models/users.js')
+const Restaurant = require('../models/restaurant.js')
 
 //LOG IN ROUTE
 sessions.get('/', (req,res)=>{
@@ -28,11 +29,50 @@ sessions.post('/',(req,res)=>{
     })
 })
 
+//Cheking if user is logged in to show cart options
+sessions.get('/kart', (req,res)=>{
+    if(!req.session.currentUser.kart){
+        console.log(req.session.currentUser.kart)
+        res.render('users/kart.ejs',
+        {currentUser: req.session.currentUser})
+    }else{
+        console.log(req.session.currentUser.kart)
+        res.render('users/kart.ejs',
+        {currentUser: req.session.currentUser,
+        kart: req.session.currentUser.kart
+    })
+    }
+})
+
+//ADDING TO THE CART 
+sessions.put('/:id', (req,res)=>{
+    User.findById(req.session.currentUser._id, (err,foundUser)=>{
+        Restaurant.findById(req.params.id, (err,foundDish)=>{
+            if(err){
+                console.log(err)
+            }else{
+                foundUser.kart.push(foundDish)
+                foundUser.save()
+                    res.redirect('/sessions/kart')
+            }
+        })
+    })
+})
+
+//DELETING FROM THE CART
+sessions.delete('/:index', (req,res)=>{
+    User.findById(req.session.currentUser._id, (err,foundUser)=>{
+        foundUser.kart.splice(req.params.index, 1)
+        foundUser.save()
+        res.redirect('/sessions/kart')
+    })        
+})
+
+
 sessions.delete('/', (req,res)=>{
     req.session.destroy(()=>{
         res.redirect('/restaurant')
     })
 })
-
 
 module.exports = sessions
