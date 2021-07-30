@@ -69,6 +69,9 @@
                 border: 1px solid black;
                 background: #fff;
             }
+            .profile{
+                text-transform: uppercase;
+            }
         </style>
     </head>
     <body>
@@ -78,15 +81,13 @@
                     <a href="/restaurant" class="logo-nav">AMORES</a>
                     <a href="/restaurant/#home">HOME</a>
                     <a href="/restaurant/#about">ABOUT</a>
-                    <% if(currentUser) { %>
-                    <a href="/restaurant/#info">LOCATION & HOURS</a>
                     <a href="/restaurant/show">MENU</a>
+                    <a href="/restaurant/#info">LOCATION & HOURS</a>
+                    <% if(currentUser) { %>
+                    <a href="/users" class="profile" style="color: #000" >Welcome, <%=currentUser.username%></a>
                     <input class="btn-logout" type="submit" value="LOG OUT">
-                    <a href="/users"class="profile" style="color: #000" ><%=currentUser.username%></a>
                     <a href="/sessions/kart" class="kart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
                      <% } else { %>
-                        <a href="/restaurant/#menu">MENU</a>
-                        <a href="/restaurant/#info">LOCATION & HOURS</a>
                         <a class="signin" href="/sessions">SIGN IN</a>
                         <a id="nav-order" href="/restaurant/show">ORDER NOW</a>
                         <a href="/sessions" class="kart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>

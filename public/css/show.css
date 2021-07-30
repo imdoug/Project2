@@ -44,7 +44,9 @@ a{
 }
 /* delete button */
 .delete{
-    padding: 6.8px;
+    font-size: 1em;
+    font-family: 'Karla', sans-serif;
+    padding: 5px;
     border: 1px solid #000;
     background: #fff;
     color: #000;

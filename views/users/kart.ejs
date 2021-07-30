@@ -6,9 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
     body{
         margin: 0;
+        font-family: 'Karla', sans-serif;
+        overflow-x: hidden;
     }
+    .title{
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 2em;
+        letter-spacing: 10px;
+        margin: 0;
+    }
+    /*  */
+    h3{
+        font-family: 'Josefin Sans', sans-serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    .ingridients{
+        letter-spacing: 1px;
+        color: #999;
+    }
+    .price{
+        font-size: 1.2em;
+    }
+    /*  */
+
     /*  */
     .box{
     width: 33%;
@@ -139,15 +164,18 @@
         width: 90%;
         margin: 0 auto;
     }
-    
+    .info-dev{
+        margin-top: 5px;
+        letter-spacing: 1px;
+    }   
 </style>
 <body>
     <%- include ('../partials/info_navbar.ejs') %>
     <div class="header">
         <div class="something"></div>
         <div class="header-text">
-            <h3>DELIVERY OR TAKEAWAY</h3>
-            <p>We are open for delivery from 3:30pm to 9:30pm daily</p>
+            <h3 class="title">DELIVERY OR TAKEAWAY</h3>
+            <p class="info-dev">We are open for delivery from 3:30pm to 9:30pm daily</p>
         </div>
         <div class="image-box">
             <img class="header-image" src="https://i.ibb.co/3FXXsZ9/h3-bg.png">

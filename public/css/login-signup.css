@@ -27,7 +27,7 @@ h1{
     text-align: center;
 }
 td{
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 .button{
     padding-top: 30px;
@@ -36,6 +36,19 @@ td{
 }
 .go-login, .go-signup{
     text-align: center;
+}
+.join-us{
+    font-size: 1em;
+    font-family: 'Karla', sans-serif;
+    border: 1px solid #fff;
+    color: #fff;
+    background:#000;
+    padding: 5px; 
+}
+.join-us:hover{
+    background: #fff;
+    color: #000;
+    cursor: pointer;
 }
 .signup{
     font-size: 1em;

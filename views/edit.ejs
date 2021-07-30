@@ -4,8 +4,83 @@
         <meta charset="utf-8">
         <title>EDIT PAGE</title>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
             body{
-                margin: 0
+                margin: 0;
+                font-family: 'Karla', sans-serif;
+                overflow-x: hidden;
+            }
+            .title{
+                font-family: 'Josefin Sans', sans-serif;
+                font-size: 2em;
+                letter-spacing: 10px;
+                margin: 0;
+            }
+            header{
+                position: fixed;
+                top: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                background-color: #fff;
+                z-index: 99;
+                height: 59px;
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+            }
+            .navigation{
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 75%;
+                background: white;
+                z-index: 98;
+            }
+            .navigation > a + a{
+                font-size: 1em;
+                letter-spacing: 1px;
+                text-decoration: none;
+                color: #000;
+            }
+            .signin, .btn-logout{
+                padding: 5px;
+                border: 1px solid black;
+                background: #fff;
+            }
+            .signin:hover,.btn-logout:hover{
+                cursor: pointer;
+                background-color: black;
+                color: #fff;
+            }
+            #nav-order{
+                padding: 6px;
+                color: #fff;
+                background: #000;
+            }
+            #nav-order:hover{
+                cursor: pointer;
+                border: 1px solid #000;
+                color: #000;
+                background: white;
+                padding: 5px;
+            }
+            .fa-user-circle{
+                font-size: 1.5em;
+            }
+            .logo-nav{
+                font-size: 1.5em;
+                font-family: 'Josefin Sans', sans-serif;
+                letter-spacing: 1px;
+                text-decoration: none;
+                color: #000;
+            }
+            .kart{
+                padding: 5px 10px;
+                border: 1px solid black;
+                background: #fff;
+            }
+            .profile{
+                text-transform: uppercase;
             }
             /*  */
             .edit-container{
@@ -95,13 +170,18 @@
                 margin-top: 0;
                 letter-spacing: 1px;
             }
+            h2{
+                font-family: 'Josefin Sans', sans-serif;
+                text-align: center;
+                text-transform: uppercase;
+            }
         </style>
     </head>
     <body>
         <%- include ('./partials/info_navbar.ejs') %>
         <div class="edit-container">
             <div class="edit-box">
-                <h1>Editing <%=dish.name%></h1>
+                <h2>Editing <br/><%=dish.name%></h2>
                 <form action="/restaurant/<%=id%>/edit" method="POST">
                     <table>
                         <tr>
