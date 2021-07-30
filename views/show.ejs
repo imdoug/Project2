@@ -10,8 +10,8 @@
     <div class="header">
         <div class="something"></div>
         <div class="header-text">
-            <h3>DELIVERY OR TAKEAWAY</h3>
-            <p>We are open for delivery from 3:30pm to 9:30pm daily</p>
+            <h3 class="title">DELIVERY OR TAKEAWAY</h3>
+            <p class="info-dev">We are open for delivery from 3:30pm to 9:30pm daily</p>
         </div>
         <div class="image-box">
             <img class="header-image" src="https://i.ibb.co/3FXXsZ9/h3-bg.png">
@@ -24,7 +24,7 @@
                 <% for(let i = 0; i < alldishes.length; i++){ %>
                 <form class="show" action="/restaurant/<%=alldishes[i].id%>?_method=DELETE" method="POST">
                     <div class="box">
-                        <h3><%=alldishes[i].name%></h3>
+                        <h3 id="dish-name"><%=alldishes[i].name%></h3>
                         <div>
                             <img clas="dishes" src="<%=alldishes[i].img%>">
                         </div>

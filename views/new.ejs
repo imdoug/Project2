@@ -3,34 +3,138 @@
     <head>
         <meta charset="utf-8">
         <title>NEW PAGE</title>
+        <style>
+            body{
+                margin: 0
+            }
+            /*  */
+            .edit-container{
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 500px;
+            }
+            .edit-box{
+                padding: 50px;
+                background: #fff;
+                font-size: 1.5;
+                box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+            }
+            .cancel, .create{
+                background: white;
+                color: #000;
+                border: 1px solid #000;
+                padding: 3px;
+                text-decoration: none;
+            }
+            .cancel:hover, .create:hover{
+                background: #000;
+                color: #fff;
+                cursor: pointer;
+            }
+            .buttons{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+            }
+            .cancel{
+                margin-left: 2%;
+            }
+            /* footer */
+            footer{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 160px;
+                color: white;
+                background-color: #000;
+            }
+            footer > a{
+                text-decoration: none;
+            }
+            footer > a+a{
+                margin-left: 2%;
+            }
+            .fa{
+                font-size: 2em;
+                color: white;
+                text-decoration: none;
+            }
+            .fa +.fa{
+                margin-left: 1%;
+            }
+            .fa-instagram{
+                font-size: 2em;
+            }
+            .fa-instagram:hover{
+                color: #f40083;
+            }
+            .fa-linkedin:hover{
+                color: #007bb5;
+            }
+            footer > div{
+                text-align: center;
+            }
+            footer > h3{
+                letter-spacing: 1px;
+            }
+            footer > p{
+                margin: 0;
+                font-size: 1.2em;
+            }
+            .copy{
+                margin-bottom: 0;
+                letter-spacing: 1px;
+            }
+            .footer-title{
+                margin: 10px 0px 0px 0px;
+            }
+            .footer-info{
+                margin-top: 0;
+                letter-spacing: 1px;
+            }
+            h2{
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        <h1>NEW PAGE</h1>
-        <form action="/restaurant" method="POST">
-            <table>
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text" name="name" placeholder="dish name"/></td>
-                </tr>
-                <tr>
-                    <td>Ingredients:</td>
-                    <td><input type="textarea" name="ingredients" placeholder="dish ingredients"/></td>
-                </tr>
-                <tr>
-                    <td> Image:</td>
-                    <td><input type="text" name="img" placeholder="image file"/></td>
-                </tr>
-                <tr>
-                    <td>Price:</td>
-                    <td><input type="number" name="price" placeholder="price"/></td>
-                </tr>
-                <tr>
-                    <td>Tags:</td>
-                    <td><input type="text" name="tags" placeholder="tags"/></td>
-                </tr>
-            </table>
-            <input type="submit" value="CREATE ITEM"/>
-            <a href="/restaurant">CANCEL</a>
-        </form>
+        <%- include ('./partials/info_navbar.ejs') %>
+        <div class="edit-container">
+            <div class="edit-box">
+                <form action="/restaurant" method="POST">
+                    <h2>Create new Dish</h2>
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td><input type="text" name="name" placeholder="dish name"/></td>
+                        </tr>
+                        <tr>
+                            <td>Ingredients:</td>
+                            <td><input type="textarea" name="ingredients" placeholder="dish ingredients"/></td>
+                        </tr>
+                        <tr>
+                            <td> Image:</td>
+                            <td><input type="text" name="img" placeholder="image file"/></td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td><input type="number" name="price" placeholder="price"/></td>
+                        </tr>
+                        <tr>
+                            <td>Tags:</td>
+                            <td><input type="text" name="tags" placeholder="tags"/></td>
+                        </tr>
+                    </table>
+                    <div class="buttons">
+                    <input class="create"type="submit" value="CREATE ITEM"/>
+                    <a class="cancel" href="/restaurant">CANCEL</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <%- include ('./partials/footer.ejs') %>
     </body>
 </html>

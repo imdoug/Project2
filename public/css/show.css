@@ -1,5 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
 body{
     margin: 0;
+    font-family: 'Karla', sans-serif;
+    overflow-x: hidden;
+}
+.title{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2em;
+    letter-spacing: 10px;
+    margin: 0;
+}
+.header-text > p{
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+h3{
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.ingridients{
+    letter-spacing: 1px;
+    color: #999;
+}
+.price{
+    font-size: 1.2em;
 }
 /* buttons */
 a{

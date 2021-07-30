@@ -157,7 +157,6 @@
     <div class="menu">
         <div class="container">
             <% if (kart.length === undefined) { %>
-                <h1>im coming here!</h1>
             <% } else { %>
                 <% for(let i = 0; i < kart.length; i++){ %>
                     <form class="show" action="/users/<%=kart[i]._id%>?_method=DELETE" method="POST">
