@@ -52,8 +52,10 @@ sessions.put('/:id', (req,res)=>{
                 console.log(err)
             }else{
                 foundUser.kart.push(foundDish)
-                foundUser.save()
-                    res.redirect('/sessions/kart')
+                foundUser.save((err, savedUser)=>{
+                    req.session.currentUser = savedUser
+                    res.redirect('/restaurant/show')
+                })
             }
         })
     })
@@ -62,9 +64,11 @@ sessions.put('/:id', (req,res)=>{
 //DELETING FROM THE CART
 sessions.delete('/:index', (req,res)=>{
     User.findById(req.session.currentUser._id, (err,foundUser)=>{
-        foundUser.kart.splice(req.params.index, 1)
-        foundUser.save()
-        res.redirect('/sessions/kart')
+        foundUser.kart.splice(Number(req.params.index), 1)
+        foundUser.save((err, savedUser)=>{
+            req.session.currentUser = savedUser
+            res.redirect('/sessions/kart')
+        })
     })        
 })
 

@@ -159,7 +159,7 @@
             <% if (kart.length === undefined) { %>
             <% } else { %>
                 <% for(let i = 0; i < kart.length; i++){ %>
-                    <form class="show" action="/sessions/<%=kart[i]._id%>?_method=DELETE" method="POST">
+                    <form class="show" action="/sessions/<%=i%>?_method=DELETE" method="POST">
                     <div class="box">
                         <h3><%=kart[i].name%></h3>
                         <div>
