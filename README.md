@@ -21,6 +21,4 @@ AMORES Restaurant is a web application to help restaurant owners to easily manip
 - add new dishes to the menu
 - delete dishes that are not available anymore
 
-check
-
 ###### sentences with a * before them are functionalities that are not working yet
