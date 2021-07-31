@@ -12,8 +12,8 @@ AMORES Restaurant is a web application to help restaurant owners to easily manip
 
 - check the menu and add dishes to your cart
 - remove the dishes from the cart in case you didn’t need that much food
-- *Check out filling up a form with your info
-- *You will receive a confirmation of that your order was processed.
+- Check out and receive a confirmation of that your order was processed, with all your items that were in yout cart,the total of your cart, and how long  will it take for you to get the food.
+- *Check your profile, add a profille picture,some info about you, see your past orders.
 
 > ### If you login as the admin of the page 
 ##### [login: adm] [password: 123456]
@@ -21,4 +21,4 @@ AMORES Restaurant is a web application to help restaurant owners to easily manip
 - add new dishes to the menu
 - delete dishes that are not available anymore
 
-###### sentences with a * before them are functionalities that are not working yet
+###### sentences with a * before them are functionalities that are still a work in process

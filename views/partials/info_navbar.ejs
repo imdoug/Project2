@@ -84,7 +84,7 @@
                     <a href="/restaurant/show">MENU</a>
                     <a href="/restaurant/#info">LOCATION & HOURS</a>
                     <% if(currentUser) { %>
-                    <a href="/users" class="profile" style="color: #000" >Welcome, <%=currentUser.username%></a>
+                    <a href="/sessions/profile" class="profile" style="color: #000" >Welcome, <%=currentUser.username%></a>
                     <input class="btn-logout" type="submit" value="LOG OUT">
                     <a href="/sessions/kart" class="kart"><i class="fa fa-shopping-cart" style="color: #000;" style="font-size: 1.5em;"></i></a>
                      <% } else { %>

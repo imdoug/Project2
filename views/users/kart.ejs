@@ -167,7 +167,14 @@
     .info-dev{
         margin-top: 5px;
         letter-spacing: 1px;
-    }   
+    }
+    .empty-cart{
+        height: 170px;
+        width: 400%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
 </style>
 <body>
     <%- include ('../partials/info_navbar.ejs') %>
@@ -184,7 +191,10 @@
     </div>
     <div class="menu">
         <div class="container">
-            <% if (kart.length === undefined) { %>
+            <% if (kart.length === 0) { %>
+                <div class="empty-cart">
+                    <h3>Feeling hungry?<br/><br/> add something yummy to your cart.</h3>
+                </div>
             <% } else { %>
                 <% for(let i = 0; i < kart.length; i++){ %>
                     <form class="show" action="/sessions/<%=i%>?_method=DELETE" method="POST">
@@ -209,7 +219,7 @@
         </div>
     </div>
     <div class="create-button">
-        <a class="create" href="/restaurant/">CHECK OUT</a>
+        <a class="create" href="/sessions/checkout">CHECK OUT</a>
     </div>
     <%- include ('../partials/footer.ejs') %>
 </body>
