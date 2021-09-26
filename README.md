@@ -22,3 +22,5 @@ AMORES Restaurant is a web application to help restaurant owners to easily manip
 - delete dishes that are not available anymore
 
 ###### sentences with a * before them are functionalities that are still a work in process
+
+live project: https://amores-restaurant.herokuapp.com/restaurant
